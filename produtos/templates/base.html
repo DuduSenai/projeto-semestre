@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} Projeto Modelo {% endblock %}</title> 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <title>{% block title %}Projeto Modelo{% endblock %}</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
 </head>
 <body>
-    {% block content %} {% endblock %}
+    <header>
+        
+        
+        <div class="esquerda">
+        <img class="logo" src="{% static 'img/logo.png' %}" alt="">
+        <a class="btn" href="#">Home</a>
+        <a class="btni" href="{% url 'produto_list' %}">Produtos</a>
+        <a class="btni" href="{% url 'categoria_list' %}">Categorias</a>
+        <a class="btni" href="{% url 'movimentacao_list' %}">Movimetação</a>
+        </div>
+        <div class="direita">
+        <a class="btni" href="{% url 'profile' %}">Perfil</a>
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn" style="background: none; border: none; color: white; cursor: pointer; font-size: 1.3rem;"> Sair </button>
+        </form>
+        
+
+
+    </header>
+    <div class="container">
+
+    {% block content %}{% endblock%}
+    </div>
+
+    <footer>
+
+    </footer>
+
 </body>
 </html>

@@ -1,0 +1,38 @@
+*{
+    border:none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-rows: 10vh calc(100vh - 20vh) 10vh;
+    grid-template-areas: "h"
+                         "c"
+                         "f";
+}
+
+header{
+    grid-area: h;
+    background-color:brown;
+}
+
+.container{
+    grid-area: c;   
+    background-color:aliceblue;
+}
+
+footer{
+    grid-area: f;
+    background-color:brown;
+}
+
+.esquerda{
+    display: flex;
+}
+
+.direita{
+    display: flex;
+}
